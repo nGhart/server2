@@ -2,9 +2,11 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 
 async function requireAuth(request, response, next) {
+  const token = request.cookies.Authorization;
+  console.log(token)
   try {
     //read token
-    const token = request.cookies.Authorization;
+    
     //decode token
     const decoded = jwt.verify(token, process.env.SECRET);
     //make sure token is not expired
