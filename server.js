@@ -173,16 +173,16 @@ app.delete(
   vaccinationController.deleteVaccination
 );
 
-app.use((req, res, next) => {
-  next(createError(404));
-});
-app.use(function (err, req, res, next) {
-  console.error(err.message);
-  if (!err.statusCode) err.statusCode = 500;
-  res.status(err.statusCode).send(err.message);
-});
+// app.use((req, res, next) => {
+//   next(createError(404));
+// });
+// app.use(function (err, req, res, next) {
+//   console.error(err.message);
+//   if (!err.statusCode) err.statusCode = 500;
+//   res.status(err.statusCode).send(err.message);
+// });
 
 //server start
-app.listen(process.env.PORT, '127.0.0.1', function () {
-  console.log('server is listening on ' + process.env.PORT);
+app.listen(5001, function () {
+  console.log('server is listening');
 });
