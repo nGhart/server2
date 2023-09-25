@@ -6,7 +6,7 @@ async function requireAuth(request, response, next) {
   const token =
     'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NGZjZTMxZmUzNjhkNDEzNDUyY2MzZDQiLCJleHAiOjE2OTgxODY0NzY5MTksImlhdCI6MTY5NTU5NDQ3Nn0.Z0g0hhB-R9K_JlSdT7VKnb4-b5wPAKUHfpY0OKXwBRQ';
   //console.log('check cookie', token);
-  console.log(request);
+  //console.log(request);
   try {
     //decode token
     const decoded = jwt.verify(token, process.env.SECRET);
