@@ -28,8 +28,9 @@ async function login(request, response) {
 
     const exp = Date.now() + 1000 * 60 * 60 * 24 * 30;
     const token = jwt.sign({ sub: user._id, exp }, process.env.SECRET);
-    console.log('login', token);
-    response.json({ user });
+    //console.log('login', token);
+    //response.json({ user });
+    console.log(user);
 
     response.cookie('Authorization', token, {
       expires: new Date(exp),
