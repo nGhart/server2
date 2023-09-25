@@ -28,8 +28,8 @@ async function login(request, response) {
 
     const exp = Date.now() + 1000 * 60 * 60 * 24 * 30;
     const token = jwt.sign({ sub: user._id, exp }, process.env.SECRET);
-    console.log('what token', token);
-    // response.json({user})
+    console.log('login', token);
+    response.json({ user });
 
     response.cookie('Authorization', token, {
       expires: new Date(exp),
@@ -58,7 +58,7 @@ function logout(request, response) {
 function checkAuth(request, response) {
   try {
     response.sendStatus(200);
-    console.log('look', request.user);
+    console.log('check auth', request.user);
   } catch (error) {
     console.log(error.message);
   }
