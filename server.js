@@ -33,7 +33,7 @@ app.use(
   cors({
     origin: [
       '*',
-      'http://localhost:3000',
+      //'http://localhost:3000',
       'https://recordsfrontend.vercel.app',
     ],
     credentials: true,
