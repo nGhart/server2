@@ -31,7 +31,11 @@ app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: ['*', 'http://localhost:3000'],
+    origin: [
+      '*',
+      'http://localhost:3000',
+      'https://recordsfrontend.vercel.app',
+    ],
     credentials: true,
   })
 );
