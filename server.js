@@ -1,6 +1,3 @@
-// if (process.env.NODE_ENV != 'production') {
-//   require('dotenv').config();
-// }
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
@@ -33,8 +30,7 @@ app.use(
   cors({
     origin: [
       '*',
-      'http://localhost:3000',
-      //'https://recordsfrontend.vercel.app',
+      'https://recordsfrontend.vercel.app',
     ],
     credentials: true,
   })
